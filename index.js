@@ -19,12 +19,12 @@ app.use("/api", productsRouter);
 app.use("/api", authRouter); // <<< RUTA DE AUTENTICACIÓN
 app.use(auth);
 
-app.get("/", auth, (req, res) => {
-  res.send("API ...");
-});
-
 app.get("/", (req, res) => {
   res.json({ message: "Bienvenidos a nuestra API REST"});
+});
+
+app.get("/", auth, (req, res) => {
+  res.send("API ...");
 });
 
 app.use((req, res, next) => {
