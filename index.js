@@ -17,14 +17,10 @@ app.use(express.json());
 
 app.use("/api", productsRouter);
 app.use("/api", authRouter); // <<< RUTA DE AUTENTICACIÓN
-app.use(auth);
-
-app.get("/", (req, res) => {
-  res.json({ message: "Bienvenidos a nuestra API REST"});
-});
+//app.use(auth); VOY A USAR LA AUTORIZACION SOLO PARA LA RUTA DELETE YA QUE EL PROYECTO NO PIDE QUE SE APLIQUE GLOBAL.
 
 app.get("/", auth, (req, res) => {
-  res.send("API ...");
+  res.send("Bienvenidos a nuestra API REST");
 });
 
 app.use((req, res, next) => {
