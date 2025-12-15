@@ -9,6 +9,7 @@ import express from "express";
 import productsRouter from "./src/routes/products.router.js";
 import authRouter from "./src/routes/auth.router.js"; // <<< IMPORTA RUTA DE AUTENTICACIÓN
 import { auth } from "./src/middleware/auth.middleware.js";
+//import cors from "cors";
 
 const app = express();
 app.use(express.json());
